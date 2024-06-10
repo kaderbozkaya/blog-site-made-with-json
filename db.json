@@ -1,12 +1,20 @@
 {
   "blogs": [
     {
-      "id": "b883",
-      "title": "dfndgngm naberrrr",
-      "description": "Yeni eklenen blogun ilk sıraya alınması için, blog listesini güncellerken sıralama işlemini yapmanız gerekir. Bunu, mevcut bloglarınızı aldıktan veya yeni bir blog ekledikten sonra listeyi yeniden sıralayarak gerçekleştirebilirsiniz. Aşağıda, blogların son eklenenin ilk sırada olacak şekilde nasıl sıralanacağını gösteren iki yöntem bulunmaktadır.  1. Yeni Blog Eklenirken Sıralama Blogu başarıyla ekledikten sonra, blogları yeniden alıp sıralayarak listeyi güncelleyebilirsiniz. handleSubmit fonksiyonunuza aşağıdaki şekilde ekleyebilirsiniz:",
+      "id": "d205",
+      "title": "lppppppppp",
+      "description": "lpppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppp",
       "category": "Fashion",
-      "imageUrl": "http://res.cloudinary.com/dadsdfuol/image/upload/v1717764472/sctd6ov5u0nljjhh4o9c.png",
-      "date": "06/07/2024"
+      "imageUrl": "http://res.cloudinary.com/dadsdfuol/image/upload/v1718007748/tkiqfmzr1bm0ytvlk2hn.png",
+      "date": "06/10/2024"
+    },
+    {
+      "id": "f8d1",
+      "title": "State Management nedir?",
+      "description": "State management(Durum yönetimi) nedir? State, uygulamalarımızdaki bileşenlerin her birinin o anda sahip olduğu özellikler ve bilgilerdir. Bu özellik ve bilgilerin değişkenlik göstermesi state denen kavramı ortaya çıkarıyor. Örneğin bir checkbox’ın işaretli olup olmaması bir durumdur, bir bilgidir. Bu bilgiyi uygulamamızda nasıl ilerleyeceğimizi belirlemek için kullanırız. Öte yandan bu checkbox’ın konumu, boyutu, şekli v.b. bilgiler sabit olduğu için bunu bir durum olarak belirtmemek daha mantıklı olur.(Tabii ki, bunları da birer durum olarak ele alabiliriz. Ben sadece yaygın olarak kullanım şeklini söyledim.).State management ise bu durumların her birinin yönetimini ve organizasyonunu sağlar.",
+      "category": "Technology",
+      "imageUrl": "http://res.cloudinary.com/dadsdfuol/image/upload/v1718007905/c5dequ3jl9biisszwcpc.png",
+      "date": "06/10/2024"
     }
   ]
 }
