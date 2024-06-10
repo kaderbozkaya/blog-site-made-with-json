@@ -1,0 +1,12 @@
+{
+  "blogs": [
+    {
+      "id": "b883",
+      "title": "dfndgngm naberrrr",
+      "description": "Yeni eklenen blogun ilk sıraya alınması için, blog listesini güncellerken sıralama işlemini yapmanız gerekir. Bunu, mevcut bloglarınızı aldıktan veya yeni bir blog ekledikten sonra listeyi yeniden sıralayarak gerçekleştirebilirsiniz. Aşağıda, blogların son eklenenin ilk sırada olacak şekilde nasıl sıralanacağını gösteren iki yöntem bulunmaktadır.  1. Yeni Blog Eklenirken Sıralama Blogu başarıyla ekledikten sonra, blogları yeniden alıp sıralayarak listeyi güncelleyebilirsiniz. handleSubmit fonksiyonunuza aşağıdaki şekilde ekleyebilirsiniz:",
+      "category": "Fashion",
+      "imageUrl": "http://res.cloudinary.com/dadsdfuol/image/upload/v1717764472/sctd6ov5u0nljjhh4o9c.png",
+      "date": "06/07/2024"
+    }
+  ]
+}
