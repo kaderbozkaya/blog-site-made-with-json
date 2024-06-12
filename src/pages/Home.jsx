@@ -86,10 +86,11 @@ export default function Home() {
     }
     return str;
   };
+
   const handleSearch = async (e) => {
     e.preventDefault();
     const response = await axios.get(
-      `http:/localhost:5000/blogs?q=${searchValue}`
+      `http://localhost:5000/blogs?q=${searchValue}`
     );
     if (response.status === 200) {
       setData(response.data);
@@ -107,13 +108,13 @@ export default function Home() {
           value={searchValue}
           onChange={(e) => setSearchValue(e.target.value)}
         />
-        <MDBBtn
+        <button
           type="submit"
           onClick={handleSearch}
-          className="bg-[#FF4F1F] w-[80px] h[80px]"
+          className="bg-[#FF4F1F] w-[80px] h[80px] text-white rounded p-1"
         >
           Search
-        </MDBBtn>
+        </button>
       </form>
       <MDBCol className="flex flex-col justify-between">
         <Categories options={options} handleCategory={handleCategory} />
