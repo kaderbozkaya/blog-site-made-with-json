@@ -1,4 +1,10 @@
-import { MDBCol, MDBContainer, MDBRow, MDBTypography } from "mdb-react-ui-kit";
+import {
+  MDBBtn,
+  MDBCol,
+  MDBContainer,
+  MDBRow,
+  MDBTypography,
+} from "mdb-react-ui-kit";
 import React, { useEffect, useState } from "react";
 import { toast } from "react-toastify";
 import Blogs from "../components/Blogs";
@@ -10,6 +16,7 @@ export default function Home() {
   const options = ["Travel", "Fashion", "Sports", "Food", "Technology"];
   const [data, setData] = useState([]);
   const [latestBlog, setLatestBlog] = useState([]);
+  const [searchValue, setSearchValue] = useState("");
 
   useEffect(() => {
     loadBlogsData();
@@ -79,9 +86,35 @@ export default function Home() {
     }
     return str;
   };
+  const handleSearch = async (e) => {
+    e.preventDefault();
+    const response = await axios.get(
+      `http:/localhost:5000/blogs?q=${searchValue}`
+    );
+    if (response.status === 200) {
+      setData(response.data);
+    } else {
+      toast.error("Something went wrong");
+    }
+  };
 
   return (
     <>
+      <form className="m-auto p-4 -mr-[50%] max-w-[550px] content-center">
+        <input
+          type="text"
+          placeholder="Search Blog..."
+          value={searchValue}
+          onChange={(e) => setSearchValue(e.target.value)}
+        />
+        <MDBBtn
+          type="submit"
+          onClick={handleSearch}
+          className="bg-[#FF4F1F] w-[80px] h[80px]"
+        >
+          Search
+        </MDBBtn>
+      </form>
       <MDBCol className="flex flex-col justify-between">
         <Categories options={options} handleCategory={handleCategory} />
       </MDBCol>
