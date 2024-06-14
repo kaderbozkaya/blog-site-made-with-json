@@ -1,16 +1,11 @@
-import {
-  MDBBtn,
-  MDBCol,
-  MDBContainer,
-  MDBRow,
-  MDBTypography,
-} from "mdb-react-ui-kit";
+import { MDBCol, MDBContainer, MDBRow, MDBTypography } from "mdb-react-ui-kit";
 import React, { useEffect, useState } from "react";
 import { toast } from "react-toastify";
 import Blogs from "../components/Blogs";
 import axios from "axios";
 import Categories from "../components/Categories";
 import LatestBlog from "../components/LatestBlog";
+import Search from "../components/Search";
 
 export default function Home() {
   const options = ["Travel", "Fashion", "Sports", "Food", "Technology"];
@@ -35,16 +30,21 @@ export default function Home() {
       toast.error("Something went wrong");
     }
   };
+
   const fetchLatestBlog = async () => {
-    const totalBlog = await axios.get("http://localhost:5000/blogs");
-    const start = totalBlog.data.length - 4;
-    const end = totalBlog.data.length;
-    const response = await axios.get(
-      `http://localhost:5000/blogs?_end=${end}&_start=${start}`
-    );
-    if (response.status === 200) {
-      setLatestBlog(response.data);
-    } else {
+    try {
+      const totalBlog = await axios.get("http://localhost:5000/blogs");
+      const start = totalBlog.data.length - 4;
+      const end = totalBlog.data.length;
+      const response = await axios.get(
+        `http://localhost:5000/blogs?_end=${end}&_start=${start}`
+      );
+      if (response.status === 200) {
+        setLatestBlog(response.data);
+      } else {
+        toast.error("Something went wrong");
+      }
+    } catch (error) {
       toast.error("Something went wrong");
     }
   };
@@ -86,9 +86,12 @@ export default function Home() {
     }
     return str;
   };
-
+  const onInputChange = (e) => {
+    setSearchValue(e.target.value);
+  };
   const handleSearch = async (e) => {
     e.preventDefault();
+
     const response = await axios.get(
       `http://localhost:5000/blogs?q=${searchValue}`
     );
@@ -101,21 +104,11 @@ export default function Home() {
 
   return (
     <>
-      <form className="m-auto p-4 -mr-[50%] max-w-[550px] content-center">
-        <input
-          type="text"
-          placeholder="Search Blog..."
-          value={searchValue}
-          onChange={(e) => setSearchValue(e.target.value)}
-        />
-        <button
-          type="submit"
-          onClick={handleSearch}
-          className="bg-[#FF4F1F] w-[80px] h[80px] text-white rounded p-1"
-        >
-          Search
-        </button>
-      </form>
+      <Search
+        searchValue={searchValue}
+        onInputChange={onInputChange}
+        handleSearch={handleSearch}
+      />
       <MDBCol className="flex flex-col justify-between">
         <Categories options={options} handleCategory={handleCategory} />
       </MDBCol>
