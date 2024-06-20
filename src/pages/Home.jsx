@@ -40,7 +40,9 @@ export default function Home() {
         `http://localhost:5000/blogs?_end=${end}&_start=${start}`
       );
       if (response.status === 200) {
-        setLatestBlog(response.data);
+        // Reverse the order of blogs to have the latest one at the top
+        const reversedBlogs = response.data.reverse();
+        setLatestBlog(reversedBlogs);
       } else {
         toast.error("Something went wrong");
       }
@@ -140,10 +142,7 @@ export default function Home() {
             </MDBRow>
           </MDBContainer>
         </MDBCol>
-        <MDBCol
-          size="3"
-          className="bg-[#FF4F1F] h-auto rounded text-white m-2 p-2 md:size"
-        >
+        <MDBCol size="2" className="bg-[#FF4F1F] mr-4 py-3 rounded text-white">
           <h4 className="text-left py-2">Latest Post</h4>
           {latestBlog &&
             latestBlog.map((item, i) => (
