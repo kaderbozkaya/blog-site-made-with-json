@@ -79,6 +79,14 @@
       "category": "Sports",
       "imageUrl": "http://res.cloudinary.com/dadsdfuol/image/upload/v1718108623/eagsb789fcjcpkprlzmd.jpg",
       "date": "06/11/2024"
+    },
+    {
+      "id": "bf95",
+      "title": "cbb",
+      "description": "There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form,  by injected humour, or randomised words which don't look even slightly  believable. If you are going to use a passage of Lorem Ipsum,  you need to be sure there isn't anything embarrassing hidden in  the middle of text. All the Lorem Ipsum generators on the Internet tend to repeat predefined chunks as necessary, making this the first true generator on the Internet. It uses a dictionary of over 200 Latin  words, combined with a handful of model sentence structures,  to generate Lorem Ipsum which looks reasonable. The generated Lorem I psum is therefore always free from repetition, injected humour,  or non-characteristic words etc.",
+      "category": "Fashion",
+      "imageUrl": "http://res.cloudinary.com/dadsdfuol/image/upload/v1718361804/zv8olqa3xgo7913wdu3d.jpg",
+      "date": "06/14/2024"
     }
   ]
 }

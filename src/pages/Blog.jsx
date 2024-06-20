@@ -28,11 +28,11 @@ export default function Blog() {
           {blog && blog.title}
         </MDBTypography>{" "}
         <br />
-        <strong className="flex items-center p-3">
+        <Badge> {blog && blog.category}</Badge>
+        <strong className="flex items-center">
+          <br />
           <MDBIcon far icon="calendar" />
           {blog && blog.date}
-
-          <Badge> {blog && blog.category}</Badge>
         </strong>
         <img
           src={blog && blog.imageUrl}

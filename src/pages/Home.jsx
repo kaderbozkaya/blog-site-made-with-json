@@ -34,7 +34,7 @@ export default function Home() {
   const fetchLatestBlog = async () => {
     try {
       const totalBlog = await axios.get("http://localhost:5000/blogs");
-      const start = totalBlog.data.length - 4;
+      const start = totalBlog.data.length - 20;
       const end = totalBlog.data.length;
       const response = await axios.get(
         `http://localhost:5000/blogs?_end=${end}&_start=${start}`
@@ -55,6 +55,10 @@ export default function Home() {
         category === "All"
           ? "http://localhost:5000/blogs"
           : `http://localhost:5000/blogs?category=${category}`;
+
+      const newPath = category === "All" ? "/" : `/${category}`;
+      window.history.pushState({}, "", newPath);
+
       const response = await axios.get(url);
       if (response.status === 200) {
         setData(response.data);
@@ -91,13 +95,16 @@ export default function Home() {
   };
   const handleSearch = async (e) => {
     e.preventDefault();
-
-    const response = await axios.get(
-      `http://localhost:5000/blogs?q=${searchValue}`
-    );
-    if (response.status === 200) {
-      setData(response.data);
-    } else {
+    try {
+      const response = await axios.get(
+        `http://localhost:5000/blogs?q=${searchValue}`
+      );
+      if (response.status === 200) {
+        setData(response.data);
+      } else {
+        toast.error("Something went wrong");
+      }
+    } catch (error) {
       toast.error("Something went wrong");
     }
   };
@@ -135,9 +142,9 @@ export default function Home() {
         </MDBCol>
         <MDBCol
           size="3"
-          className="bg-[#FF4F1F] h-[800px] rounded text-white m-2 p-2 "
+          className="bg-[#FF4F1F] h-auto rounded text-white m-2 p-2 md:size"
         >
-          <h4 className="text-left">Latest Post</h4>
+          <h4 className="text-left py-2">Latest Post</h4>
           {latestBlog &&
             latestBlog.map((item, i) => (
               <LatestBlog key={i} {...item}></LatestBlog>

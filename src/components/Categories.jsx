@@ -23,6 +23,7 @@ export default function Categories({ handleCategory, options }) {
           ))}
         </div>
       </div>
+      <hr />
     </>
   );
 }
