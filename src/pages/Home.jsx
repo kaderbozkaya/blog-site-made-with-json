@@ -40,7 +40,6 @@ export default function Home() {
         `http://localhost:5000/blogs?_end=${end}&_start=${start}`
       );
       if (response.status === 200) {
-        // Reverse the order of blogs to have the latest one at the top
         const reversedBlogs = response.data.reverse();
         setLatestBlog(reversedBlogs);
       } else {

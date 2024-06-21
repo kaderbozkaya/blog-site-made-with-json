@@ -4,10 +4,10 @@ import React from "react";
 export default function Categories({ handleCategory, options }) {
   return (
     <>
-      <div className="flex w-full">
-        <div className="flex pb-3 text-lg m-3 ">
+      <div className="flex w-full h-20">
+        <div className="flex pb-3 text-lg m-1 w-full items-center">
           <button
-            className="w-44 bg-[#FF4F1F] flex items-center justify-center text-white rounded p-1"
+            className="w-40 h-10 bg-[#FF4F1F] flex items-center justify-center text-white rounded p-1"
             onClick={() => handleCategory("All")}
           >
             All

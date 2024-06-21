@@ -18,8 +18,11 @@ export default function Header() {
     <>
       <MDBNavbar
         expand="lg"
-        light
-        style={{ backgroundColor: "#FF4F1F", borderRadius: "3px" }}
+        // light
+        style={{
+          backgroundColor: "#FF4F1F",
+          borderRadius: "3px",
+        }}
       >
         <MDBContainer fluid>
           <MDBNavbarBrand href="/">
@@ -27,8 +30,8 @@ export default function Header() {
           </MDBNavbarBrand>
           <MDBNavbarToggler
             type="button"
-            data-target="#navbarColor02"
-            aria-controls="navbarColor02"
+            // data-target="#navbarColor02"
+            // aria-controls="navbarColor02"
             aria-expanded="false"
             aria-label="Toggle navigation"
             onClick={() => setShow(!show)}
@@ -36,7 +39,7 @@ export default function Header() {
             <MDBIcon icon="bars" fas className="text-white" />
           </MDBNavbarToggler>
           <MDBCollapse open={show} navbar>
-            <MDBNavbarNav className="me-auto mb-2 mb-lg-0">
+            <MDBNavbarNav className="me-auto mb-2 mb-lg-0 ">
               <MDBNavbarItem className="active">
                 <MDBNavbarLink
                   aria-current="page"
@@ -51,12 +54,6 @@ export default function Header() {
                   Add Blog
                 </MDBNavbarLink>
               </MDBNavbarItem>
-              {/* <MDBNavbarItem>
-                <MDBNavbarLink href="">Pricing</MDBNavbarLink>
-              </MDBNavbarItem> */}
-              {/* <MDBNavbarItem>
-                <MDBNavbarLink href="#">About</MDBNavbarLink>
-              </MDBNavbarItem> */}
             </MDBNavbarNav>
           </MDBCollapse>
         </MDBContainer>

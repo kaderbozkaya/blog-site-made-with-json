@@ -23,8 +23,8 @@ export default function Blogs({
 }) {
   return (
     <>
-      <MDBCol size={4}>
-        <MDBCard className="h-100 mt-2" style={{ maxWidth: "22rem" }}>
+      <MDBCol size={12} md={4}>
+        <MDBCard className="h-96 mt-2" style={{ maxWidth: "22rem" }}>
           <MDBCardImage
             src={imageUrl}
             alt={title}
