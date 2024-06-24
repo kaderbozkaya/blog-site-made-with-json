@@ -113,12 +113,14 @@ export default function AddBlog() {
   return (
     <>
       <MDBValidation
-        className="row g-3 shadow-lg shadow-orange-600 rounded-md"
-        style={{ marginTop: "100px" }}
+        className="row g-3 shadow-xl shadow-[#ff4f1f] rounded-md m-auto md:w-[50%] w-[70%] p-6"
+        // style={{ marginTop: "100px" }}
         noValidate
         onSubmit={handleSubmit}
       >
-        <p className="fs-2 fw-bold">{editMode ? "Update Blog" : "Add Blog"}</p>
+        <p className="text-lg md:text-2xl text-[#ff4f1f] font-bold">
+          {editMode ? "Update Blog" : "Add Blog"}
+        </p>
         <div className="m-auto p-3 max-w-96 ">
           <MDBInput
             value={title}
@@ -160,7 +162,9 @@ export default function AddBlog() {
             className="w-full rounded-sm h-9 border"
             onChange={onCategoryChange}
           >
-            <option>Please select category</option>
+            <option disabled selected>
+              Please select category
+            </option>
             {options.map((option, i) => (
               <option value={option} key={i}>
                 {option}
