@@ -143,7 +143,7 @@ export default function Home() {
         </MDBCol>
         <MDBCol
           size="4"
-          md={2}
+          lg={2}
           className="bg-[#FF4F1F] mr-4 py-3 rounded text-white "
         >
           <p className="text-left py-2 text-sm md:text-lg font-bold">

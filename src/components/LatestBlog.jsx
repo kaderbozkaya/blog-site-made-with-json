@@ -12,19 +12,19 @@ export default function LatestBlog({ imageUrl, title, id }) {
   return (
     <>
       <Link to={`/blog/${id}`}>
-        <MDBCard className="max-w-[300px] mt-2 flex items-center justify-center">
+        <MDBCard className="max-w-[300px] mt-2">
           <MDBRow className="g-0">
-            <MDBCol md="3">
+            <MDBCol md="4" className="flex m-1 items-center justify-center">
               <MDBCardImage
                 src={imageUrl}
                 alt={title}
                 fluid
-                className="w-[120px] h:[120px] md:w-[300px] md:h-[200px] rounded m-3"
+                className="w-16 h-16 md:w-40 md:h-40 rounded m-2"
               ></MDBCardImage>
             </MDBCol>
-            <MDBCol md="9">
+            <MDBCol md="2">
               <MDBCardBody>
-                <p className="flex items-center justify-center font-bold ">
+                <p className="flex font-bold text-wrap text-[#FF4F1F] text-xs md:text-base ">
                   {title}
                 </p>
               </MDBCardBody>
