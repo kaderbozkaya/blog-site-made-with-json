@@ -12,7 +12,7 @@ export default function LatestBlog({ imageUrl, title, id }) {
   return (
     <>
       <Link to={`/blog/${id}`}>
-        <MDBCard className="md:w-[300px] mt-2 flex items-center justify-center">
+        <MDBCard className="max-w-[300px] mt-2 flex items-center justify-center">
           <MDBRow className="g-0">
             <MDBCol md="3">
               <MDBCardImage

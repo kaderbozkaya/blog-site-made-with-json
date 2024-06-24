@@ -4,10 +4,10 @@ import React from "react";
 export default function Categories({ handleCategory, options }) {
   return (
     <>
-      <div className="flex w-full h-20">
-        <div className="flex pb-3 text-lg m-1 w-full items-center">
+      <div className="flex w-full">
+        <div className="flex pb-3 text-lg m-1 w-full items-center justify-around">
           <button
-            className="w-40 h-10 bg-[#FF4F1F] flex items-center justify-center text-white rounded p-1"
+            className="w-24 bg-[#FF4F1F] flex items-center justify-center text-white rounded p-2"
             onClick={() => handleCategory("All")}
           >
             All
@@ -15,7 +15,7 @@ export default function Categories({ handleCategory, options }) {
           {options.map((item, i) => (
             <div
               key={i}
-              className="cursor-pointer w-[80%] hover:bg-[#FF4F1F] hover:text-white ml-3 hover:rounded p-1"
+              className="cursor-pointer hover:bg-[#FF4F1F] hover:text-white hover:rounded p-2"
               onClick={() => handleCategory(item)}
             >
               {item}
