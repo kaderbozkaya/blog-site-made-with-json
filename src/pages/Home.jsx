@@ -141,8 +141,14 @@ export default function Home() {
             </MDBRow>
           </MDBContainer>
         </MDBCol>
-        <MDBCol size="2" className="bg-[#FF4F1F] mr-4 py-3 rounded text-white">
-          <h4 className="text-left py-2">Latest Post</h4>
+        <MDBCol
+          size="4"
+          md={2}
+          className="bg-[#FF4F1F] mr-4 py-3 rounded text-white "
+        >
+          <p className="text-left py-2 text-sm md:text-lg font-bold">
+            Latest Post
+          </p>
           {latestBlog &&
             latestBlog.map((item, i) => (
               <LatestBlog key={i} {...item}></LatestBlog>

@@ -5,9 +5,9 @@ export default function Categories({ handleCategory, options }) {
   return (
     <>
       <div className="flex w-full">
-        <div className="flex pb-3 text-sm md:text-lg w-full items-center md:justify-around">
+        <div className="flex pb-3 text-sm m-1 md:text-lg w-full items-center md:justify-around">
           <button
-            className="md:w-24 bg-[#FF4F1F] flex items-center justify-center text-white rounded p-2"
+            className="md:w-24 bg-[#FF4F1F] flex items-center justify-center text-white rounded p-2 mr-1"
             onClick={() => handleCategory("All")}
           >
             All

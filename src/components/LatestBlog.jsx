@@ -19,7 +19,7 @@ export default function LatestBlog({ imageUrl, title, id }) {
                 src={imageUrl}
                 alt={title}
                 fluid
-                className="w-[300px] h-[200px] rounded m-3"
+                className="w-[120px] h:[120px] md:w-[300px] md:h-[200px] rounded m-3"
               ></MDBCardImage>
             </MDBCol>
             <MDBCol md="9">
