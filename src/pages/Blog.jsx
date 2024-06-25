@@ -23,13 +23,20 @@ export default function Blog() {
 
   return (
     <>
-      <MDBContainer style={{ border: "1px solid #d1ebe8" }}>
-        <MDBTypography tag="h2" className="mt-2 text-[#FF4F1F] inline-block">
+      <MDBContainer
+        style={{
+          border: "1px solid #d1ebe8",
+          height: "100%",
+          paddingTop: "20px",
+          paddingBottom: "20px",
+        }}
+      >
+        <MDBTypography tag="h2" className="my-3 text-[#FF4F1F] inline-block">
           {blog && blog.title}
         </MDBTypography>{" "}
         <br />
         <Badge> {blog && blog.category}</Badge>
-        <strong className="flex items-center">
+        <strong className="flex items-center py-3">
           <br />
           <MDBIcon far icon="calendar" />
           {blog && blog.date}
@@ -38,8 +45,10 @@ export default function Blog() {
           src={blog && blog.imageUrl}
           className="rounded w-full max-h-[600px]"
         />
-        <p className="mt-3 text-left">{blog && blog.description}</p>
-        <Link to="/">Go Back</Link>
+        <p className="my-2 text-left mb-3">{blog && blog.description}</p>
+        <Link to="/" className="bg-[#f08080] text-white p-2 rounded">
+          Go Back
+        </Link>
       </MDBContainer>
     </>
   );

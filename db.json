@@ -79,6 +79,14 @@
       "category": "Technology",
       "imageUrl": "http://res.cloudinary.com/dadsdfuol/image/upload/v1718888382/zxevaroqaofjwmun5snr.jpg",
       "date": "06/20/2024"
+    },
+    {
+      "id": "eaf7",
+      "title": "MDB React UI Kit nedir?",
+      "description": "MDB React UI Kit is a comprehensive set of UI components designed for use with React applications, built upon Bootstrap 5. Here’s a breakdown:   Components: It offers over 700 UI components, including buttons, forms, navigation elements, and more [3].  Integration: Designed to work seamlessly with React 18, it supports modern web development standards and practices [3].  Customization: Allows for easy theming and customization to match specific project needs [4].  License: Released under the MIT license, it's free for both personal and commercial use [4].  Popularity: Widely used by developers, it receives significant downloads weekly, indicating its popularity and community support [8].   MDB React UI Kit simplifies frontend development with React, leveraging Bootstrap's Material Design to provide a robust foundation of UI components",
+      "category": "Technology",
+      "imageUrl": "http://res.cloudinary.com/dadsdfuol/image/upload/v1719232054/wzwvkzi7ztc5ulwh5pyl.jpg",
+      "date": "06/24/2024"
     }
   ]
 }
