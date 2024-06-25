@@ -1,6 +1,7 @@
 import React from "react";
+import PropTypes from "prop-types";
 
-export default function Search({ handleSearch, searchValue, onInputChange }) {
+const Search = ({ handleSearch, searchValue, onInputChange }) => {
   return (
     <div className="m-auto p-4 max-w-[600px] content-center">
       <form
@@ -23,4 +24,12 @@ export default function Search({ handleSearch, searchValue, onInputChange }) {
       </form>
     </div>
   );
-}
+};
+
+Search.propTypes = {
+  handleSearch: PropTypes.func.isRequired,
+  searchValue: PropTypes.string.isRequired,
+  onInputChange: PropTypes.func.isRequired,
+};
+
+export default Search;
