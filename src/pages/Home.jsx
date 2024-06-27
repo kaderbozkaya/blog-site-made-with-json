@@ -6,23 +6,30 @@ import Categories from "../components/Categories";
 import Blogs from "../components/Blogs";
 import LatestBlog from "../components/LatestBlog";
 import { MDBCol, MDBContainer, MDBRow, MDBTypography } from "mdb-react-ui-kit";
+import Pagination from "../components/Pagination";
 
 const Home = () => {
   const options = ["Travel", "Fashion", "Sports", "Food", "Technology"];
   const [data, setData] = useState([]);
   const [latestBlog, setLatestBlog] = useState([]);
   const [searchValue, setSearchValue] = useState("");
+  const [currentPage, setCurrentPage] = useState(0);
+  const [totalBlog, setTotalBlog] = useState(0);
+  const [pageLimit] = useState(5);
 
   useEffect(() => {
-    loadBlogsData();
+    loadBlogsData(0, 5, 0);
     fetchLatestBlog();
   }, []);
 
-  const loadBlogsData = async () => {
+  const loadBlogsData = async (start, end, increase) => {
     try {
-      const response = await axios.get("http://localhost:5000/blogs");
+      const response = await axios.get(
+        `http://localhost:5000/blogs?_start=${start}&_end=${end}`
+      );
       if (response.status === 200) {
         setData(response.data);
+        setCurrentPage(currentPage + increase);
       } else {
         toast.error("Failed to load blogs");
       }
@@ -36,9 +43,10 @@ const Home = () => {
     try {
       const response = await axios.get("http://localhost:5000/blogs");
       if (response.status === 200) {
-        const totalBlog = response.data;
-        const start = totalBlog.length - 20;
-        const latestBlogs = totalBlog.slice(start).reverse();
+        const totalBlogData = response.data;
+        setTotalBlog(totalBlogData.length);
+        const start = totalBlogData.length - 20;
+        const latestBlogs = totalBlogData.slice(start).reverse();
         setLatestBlog(latestBlogs);
       } else {
         toast.error("Failed to fetch latest blogs");
@@ -74,7 +82,11 @@ const Home = () => {
       const response = await axios.delete(`http://localhost:5000/blogs/${id}`);
       if (response.status === 200) {
         toast.success("Blog successfully deleted");
-        loadBlogsData();
+        loadBlogsData(
+          currentPage * pageLimit,
+          (currentPage + 1) * pageLimit,
+          0
+        );
       } else {
         toast.error("Failed to delete blog");
       }
@@ -154,6 +166,15 @@ const Home = () => {
           ))}
         </MDBCol>
       </MDBRow>
+      <div className="mt-3">
+        <Pagination
+          currentPage={currentPage}
+          loadBlogsData={loadBlogsData}
+          pageLimit={pageLimit}
+          data={data}
+          totalBlog={totalBlog}
+        />
+      </div>
     </>
   );
 };
