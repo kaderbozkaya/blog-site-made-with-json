@@ -45,7 +45,7 @@ const Home = () => {
       if (response.status === 200) {
         const totalBlogData = response.data;
         setTotalBlog(totalBlogData.length);
-        const start = totalBlogData.length - 20;
+        const start = totalBlogData.length - 4;
         const latestBlogs = totalBlogData.slice(start).reverse();
         setLatestBlog(latestBlogs);
       } else {
