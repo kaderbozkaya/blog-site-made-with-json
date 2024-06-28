@@ -7,6 +7,7 @@ import Blogs from "../components/Blogs";
 import LatestBlog from "../components/LatestBlog";
 import { MDBCol, MDBContainer, MDBRow, MDBTypography } from "mdb-react-ui-kit";
 import Pagination from "../components/Pagination";
+import ScrollToTop from "../components/ScrollToTop";
 
 const Home = () => {
   const options = ["Travel", "Fashion", "Sports", "Food", "Technology"];
@@ -175,6 +176,7 @@ const Home = () => {
           totalBlog={totalBlog}
         />
       </div>
+      <ScrollToTop />
     </>
   );
 };
