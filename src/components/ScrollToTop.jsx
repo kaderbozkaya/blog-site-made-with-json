@@ -8,7 +8,7 @@ export default function ScrollToTop() {
       setIsMobile(window.innerWidth <= 768);
     };
 
-    handleResize(); // Check screen size on initial load
+    handleResize();
     window.addEventListener("resize", handleResize);
 
     return () => {
@@ -33,5 +33,3 @@ export default function ScrollToTop() {
     </button>
   );
 }
-
-// Add this component to your Home screen

@@ -18,7 +18,6 @@ export default function Header() {
     <>
       <MDBNavbar
         expand="lg"
-        // light
         style={{
           backgroundColor: "#FF4F1F",
           borderRadius: "3px",
@@ -30,8 +29,6 @@ export default function Header() {
           </MDBNavbarBrand>
           <MDBNavbarToggler
             type="button"
-            // data-target="#navbarColor02"
-            // aria-controls="navbarColor02"
             aria-expanded="false"
             aria-label="Toggle navigation"
             onClick={() => setShow(!show)}

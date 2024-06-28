@@ -22,7 +22,7 @@ export default function Pagination({
           </MDBPaginationItem>
           <MDBPaginationItem>
             <MDBBtn
-              onClick={() => loadBlogsData(5, 10, 1)}
+              onClick={() => loadBlogsData(5, 10, 1)} // 5, 0, 1 parametreleri ve benzer değerler, blog verilerini yüklemek için başlangıç ve bitiş indekslerini hesaplamak ve gezinme yönünü belirtmek için kullanılır.
               style={{
                 backgroundColor: "#FF4F1F",
                 borderRadius: "3rem",

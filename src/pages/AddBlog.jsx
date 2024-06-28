@@ -12,13 +12,13 @@ export default function AddBlog() {
     imageUrl: "",
   };
   const options = ["Travel", "Fashion", "Sports", "Food", "Technology"];
-  const [formValue, setFormValue] = useState(initialState);
+  const [formValue, setFormValue] = useState(initialState); //formun değerleri girmek için
   const [categoryErrMsg, setCategoryErrMsg] = useState(null);
   const [editMode, setEditMode] = useState(false);
   const { title, description, category, imageUrl } = formValue;
 
   const navigate = useNavigate();
-  const { id } = useParams();
+  const { id } = useParams(); //url'deki id parametresini çekiyoruz
   useEffect(() => {
     if (id) {
       setEditMode(true);
@@ -28,6 +28,7 @@ export default function AddBlog() {
       setFormValue({ ...initialState });
     }
   }, [id]);
+  //belirli bir blogu id ile alır ve formun değerlerini günceller başarısız olursa hata mesajı gösterir.
   const getSingleBlog = async (id) => {
     const singleBlog = await axios.get(`http://localhost:5000/blogs/${id}`);
     if (singleBlog.status === 200) {

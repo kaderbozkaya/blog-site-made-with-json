@@ -11,18 +11,20 @@ import ScrollToTop from "../components/ScrollToTop";
 
 const Home = () => {
   const options = ["Travel", "Fashion", "Sports", "Food", "Technology"];
-  const [data, setData] = useState([]);
+  const [data, setData] = useState([]); //blokların ekleneceği dizi
   const [latestBlog, setLatestBlog] = useState([]);
-  const [searchValue, setSearchValue] = useState("");
-  const [currentPage, setCurrentPage] = useState(0);
+  const [searchValue, setSearchValue] = useState(""); //blog arama inputu için
+  const [currentPage, setCurrentPage] = useState(0); //pagination(sayfalama) ile alakalı kod
   const [totalBlog, setTotalBlog] = useState(0);
-  const [pageLimit] = useState(5);
+  const [pageLimit] = useState(5); //sayfa limiti 5 olarak ayarlandı
 
   useEffect(() => {
-    loadBlogsData(0, 5, 0);
+    loadBlogsData(0, 5, 0); //0 başlangıç 5 son
     fetchLatestBlog();
   }, []);
 
+  //veri getirme, durum güncellemeleri ve hata işleme işlemleri için;
+  //setData(response.data) kullanarak durumu getirilen verilerle günceller ve setCurrentPage(currentPage + increase) ile geçerli sayfayı günceller.
   const loadBlogsData = async (start, end, increase) => {
     try {
       const response = await axios.get(
@@ -46,8 +48,8 @@ const Home = () => {
       if (response.status === 200) {
         const totalBlogData = response.data;
         setTotalBlog(totalBlogData.length);
-        const start = totalBlogData.length - 4;
-        const latestBlogs = totalBlogData.slice(start).reverse();
+        const start = totalBlogData.length - 4; //Toplam verilerden son dört blogu almak için yazılmış başlangıç dizini
+        const latestBlogs = totalBlogData.slice(start).reverse(); //Diziden son dört blogu çıkarır. Tersine Çevir en son eklenen en başa gelsin diye
         setLatestBlog(latestBlogs);
       } else {
         toast.error("Failed to fetch latest blogs");
@@ -67,7 +69,7 @@ const Home = () => {
       const response = await axios.get(url);
       if (response.status === 200) {
         setData(response.data);
-        const newPath = category === "All" ? "/" : `/${category}`;
+        const newPath = category === "All" ? "/" : `/${category}`; //yeni bir yol oluşturuluyor tıklanan kategori tümü ise / yönlendiriyor yanı anasayfaya geliyor değilse kategori ismine göre url alıyor
         window.history.pushState({}, "", newPath);
       } else {
         toast.error("Failed to load category");
@@ -98,7 +100,7 @@ const Home = () => {
   };
 
   const excerpt = (str) => {
-    return str.length > 50 ? str.substring(0, 50) + "..." : str;
+    return str.length > 50 ? str.substring(0, 50) + "..." : str; //Bir dizeyi 50 karaktere kadar kırpar, daha uzunsa "..." ekler
   };
 
   const onInputChange = (e) => {
